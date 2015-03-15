@@ -1,1 +1,9 @@
 C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\RestaurantProject.exe.config
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\RestaurantProject.exe
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\RestaurantProject.pdb
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.csprojResolveAssemblyReference.cache
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form1.resources
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Properties.Resources.resources
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.csproj.GenerateResource.Cache
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.exe
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.pdb
