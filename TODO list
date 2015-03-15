@@ -13,5 +13,8 @@
     -form2 (the system)
   
   -Use stored procedures
-    -login
-    ...
+    
+  -Create functions
+    -Connect to server
+    -Desconnect
+    
