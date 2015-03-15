@@ -1,0 +1,17 @@
+
+  -Create database Restaurant
+  
+  -Create tables
+      -Dish(id, name, description, price)
+      -Beverages(id, name, description, price)
+      -Employee (id, firstname, lastname)
+      -OrderData (id, employeeId, dishId,beverageId,  date, price)
+      -Payment (id, Amount, tax, date, type)
+
+  - Create forms
+    -form1 (to login in the system)
+    -form2 (the system)
+  
+  -Use stored procedures
+    -login
+    ...
