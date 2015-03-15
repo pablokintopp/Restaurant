@@ -1,20 +1,26 @@
 
-  -Create database Restaurant
+  -Create database Restaurant DONE
   
-  -Create tables
-      -Dish(id, name, description, price)
-      -Beverages(id, name, description, price)
-      -Employee (id, firstname, lastname)
-      -OrderData (id, employeeId, dishId,beverageId,  date, price)
-      -Payment (id, Amount, tax, date, type)
+  -Create/update tables
+      -Dish(id, name, description, price) DONE
+      -Beverages(id, name, description, price) DONE
+      -Employee (id, firstname, lastname) DONE
+      -OrderData (id, employeeId, dishId,beverageId,  date, price) DONE
+      -Payment (id, Amount, tax, date, type) DONE
 
   - Create forms
     -form1 (to login in the system)
     -form2 (the system)
+    -form3 something extra ??
   
   -Use stored procedures
+    -login
+    -showData
+    -insertData?
+    -deleteData?
     
   -Create functions
     -Connect to server
     -Desconnect
+    -callStoredProcedures
     
