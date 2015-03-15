@@ -1,0 +1,38 @@
+1)	Group members : max 3
+2)	Deadline : April 3, 2015 (11:59 pm)
+3)	Project
+  You are not limited to the information mentioned below.  You can add more information.
+      a.	Restaurant
+            i.	Important information
+            1.	Layout of the tables 
+      2.	Menu 
+            a.	Dishes
+            b.	Price	(price can change)
+            c.	Description
+            d.	menuid
+      3.	Employees
+            a.	Employee id
+            b.	Lastname , firstname
+      4.	Order data
+            a.	orderId
+            b.	employeeid
+            c.	menuid
+            d.	date
+            e.	price ??
+      5.	Payment 
+            a.	id
+            b.	Amount
+            c.	Tax
+            d.	date
+
+
+4)	Marks
+      a.	Table design [2 marks]
+            i.	Normalize
+            ii.	Appropriate constraints
+      b.	Features
+            i.	Add records w/o errors [2 marks]
+            ii.	Update / delete / Search records w/o errors [6 marks]
+            iii.	Usability / user friendly [5 marks]
+            iv.	Proper use of stored procedures [5 marks]
+            v.	Program design [5 marks]
