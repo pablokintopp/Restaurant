@@ -21,8 +21,8 @@ namespace RestaurantProject
         {
             
             InitializeComponent();
-            textBoxUser.Text = "f2014_user21";
-            textBoxPassword.Text = "f2014_user21";
+            textBoxUser.Text = "f2014_user20";
+            textBoxPassword.Text = "f2014_user20";
             string serverIP = "ec2-54-152-4-112.compute-1.amazonaws.com";
             string user =textBoxUser.Text;
             string password = textBoxPassword.Text;
