@@ -55,7 +55,7 @@
             // 
             this.labelUser.AutoSize = true;
             this.labelUser.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.Location = new System.Drawing.Point(182, 142);
+            this.labelUser.Location = new System.Drawing.Point(167, 142);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(46, 16);
             this.labelUser.TabIndex = 2;
