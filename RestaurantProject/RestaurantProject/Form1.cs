@@ -15,6 +15,7 @@ namespace RestaurantProject
     {
         private ConnectServer server;
         private string status;
+        private Restaurant restaurant;
         
 
         public Form1()
@@ -28,6 +29,7 @@ namespace RestaurantProject
             string password = textBoxPassword.Text;
             string database = textBoxUser.Text;
             server = new ConnectServer(serverIP,password,database,user);
+            restaurant = new Restaurant(server.Connection); 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace RestaurantProject
         {
             status = server.connectToDatabase();
             if (status.Equals("CONNECTED")) {
-                Form formMain = new Form2(this);
+                Form formMain = new Form2(this,restaurant);
                 formMain.Show();
                 this.Hide();
             }

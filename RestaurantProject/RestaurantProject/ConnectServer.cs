@@ -15,6 +15,8 @@ namespace RestaurantProject
         private string uid;
         private MySqlConnection connection;
 
+        
+
        public ConnectServer(string s, string p, string d, string u) {
             server = s;
             password = p;
@@ -22,15 +24,18 @@ namespace RestaurantProject
             uid = u;
         }
 
-        
-
 
         public string Server
         {
             get { return server; }
             set { server = value; }
         }
-        
+
+        public MySqlConnection Connection
+        {
+            get { return connection; }
+            set { connection = value; }
+        }
 
         public string Database
         {
@@ -62,11 +67,11 @@ namespace RestaurantProject
             connectionString = "SERVER=" + server + ";DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-            connection = new MySqlConnection(connectionString);
+            Connection = new MySqlConnection(connectionString);
 
             try
             {
-                connection.Open();
+                Connection.Open();
                 ret = "CONNECTED";
             }
             catch (MySqlException ex)
@@ -91,8 +96,8 @@ namespace RestaurantProject
 
         public string disconnectToDatabase()
         {
-            if (connection != null)
-                connection.Close();
+            if (Connection != null)
+                Connection.Close();
             
             
             return "DISCONNECTED";
