@@ -24,3 +24,8 @@ C:\Users\adjdantas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\o
 C:\Users\adjdantas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form3.resources
 C:\Users\adjdantas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Properties.Resources.resources
 C:\Users\adjdantas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.csproj.GenerateResource.Cache
+C:\Users\CICEROPC\Dropbox\Douglas College Graduation\CSIS 3540 001 - Client Server Systems\FinalProject\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.csprojResolveAssemblyReference.cache
+C:\Users\CICEROPC\Dropbox\Douglas College Graduation\CSIS 3540 001 - Client Server Systems\FinalProject\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form1.resources
+C:\Users\CICEROPC\Dropbox\Douglas College Graduation\CSIS 3540 001 - Client Server Systems\FinalProject\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form2.resources
+C:\Users\CICEROPC\Dropbox\Douglas College Graduation\CSIS 3540 001 - Client Server Systems\FinalProject\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Properties.Resources.resources
+C:\Users\CICEROPC\Dropbox\Douglas College Graduation\CSIS 3540 001 - Client Server Systems\FinalProject\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.csproj.GenerateResource.Cache
