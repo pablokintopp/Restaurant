@@ -54,6 +54,7 @@
             this.buttonRegister.TabIndex = 1;
             this.buttonRegister.Text = "Management";
             this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // buttonNewOrder
             // 

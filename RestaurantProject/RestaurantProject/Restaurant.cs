@@ -36,7 +36,7 @@ namespace RestaurantProject
             textBox.Clear();
         }
 
-        //DISPLAY THE COMMAND RESULT (cmd) IN ANY DATAGRIDVIEW COMMING BY PARAMETER 
+        //DISPLAY THE COMMAND RESULT (cmd) IN ANY DATAGRIDVIEW  BY PARAMETER 
         public void displayGridView(MySqlCommand cmd, DataGridView dataGridView)
         {
             MySqlDataAdapter mcd = new MySqlDataAdapter(cmd);
@@ -55,7 +55,7 @@ namespace RestaurantProject
         }
 
         //CALLING PROCEDURE WITH  PARAMETERS
-        public MySqlCommand callProcedure(string procedureName, string[] parameterName, string[] parameterValue)
+        public MySqlCommand callProcedure(string procedureName, string[] parameterName, object[] parameterValue)
         {
             MySqlCommand cmd = new MySqlCommand(procedureName, connection);
             cmd.CommandType = CommandType.StoredProcedure;

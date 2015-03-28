@@ -44,7 +44,7 @@ namespace RestaurantProject
             
             if (status.Equals("CONNECTED")) {
                 string[] parameterName = {"p_username","p_password"};
-                string[] parameterValue ={textBoxUser.Text.ToString(),textBoxPassword.Text.ToString()};
+                object[] parameterValue = { textBoxUser.Text.ToString(), textBoxPassword.Text.ToString() };
                 
                 MySqlCommand cmd = restaurant.callProcedure("Rest_Login",parameterName,parameterValue);
                 MySqlDataReader dr = cmd.ExecuteReader();
