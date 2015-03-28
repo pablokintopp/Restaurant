@@ -24,12 +24,23 @@ namespace RestaurantProject
 
         private void Form2_Load(object sender, EventArgs e)
         {
-           restaurant.callProcedure("Greet",labelWelcome);
+            greet();
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
             parent.Show();
+        }
+
+        public void greet() {
+            labelWelcome.Text = "Welcome " + restaurant.Employee.FirstName +" "+ restaurant.Employee.LastName;
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            parent.Show();
+            this.Close();
+
         }
         
     }

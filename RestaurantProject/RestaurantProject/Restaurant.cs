@@ -14,9 +14,18 @@ namespace RestaurantProject
     public class Restaurant
     {
         public MySqlConnection connection;
+        private User employee;
+
+       
 
         public Restaurant(MySqlConnection c) {
             connection = c;
+        }
+
+        public User Employee
+        {
+            get { return employee; }
+            set { employee = value; }
         }
 
         public void Clear(DataGridView dataGridView) {
@@ -27,6 +36,7 @@ namespace RestaurantProject
             textBox.Clear();
         }
 
+        //DISPLAY THE COMMAND RESULT (cmd) IN ANY DATAGRIDVIEW COMMING BY PARAMETER 
         public void displayGridView(MySqlCommand cmd, DataGridView dataGridView)
         {
             MySqlDataAdapter mcd = new MySqlDataAdapter(cmd);
@@ -35,32 +45,30 @@ namespace RestaurantProject
             dataGridView.DataSource = ds.Tables[0];
         }
 
-        public void callProcedure(string procedureName, DataGridView outPutData) {
-            MySqlCommand cmd = new MySqlCommand(procedureName, connection);
-            cmd.CommandType = CommandType.StoredProcedure;
-            //TODO  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        }
-
-        public void callProcedure(string procedureName, Label outPutData)
+        //CALLING PROCEDURE WITHOUT PARAMETERS
+        public MySqlCommand callProcedure(string procedureName)
         {
             MySqlCommand cmd = new MySqlCommand(procedureName, connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            try
-            {
-                MySqlDataReader dr = cmd.ExecuteReader();
-                //outPutData.setText(dr);
-                // using DataGridView
-                //outPutData.Text = dr[0].ToString() ;
-              //  MessageBox.Show(dr["Message"]);
-                //TODO XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            return cmd;
         }
+
+        //CALLING PROCEDURE WITH  PARAMETERS
+        public MySqlCommand callProcedure(string procedureName, string[] parameterName, string[] parameterValue)
+        {
+            MySqlCommand cmd = new MySqlCommand(procedureName, connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            
+            for (int i = 0; i < parameterName.Length; i++)
+            {
+                cmd.Parameters.AddWithValue("@"+parameterName[i], parameterValue[i]);
+                cmd.Parameters["@" + parameterName[i]].Direction = ParameterDirection.Input;
+            }
+
+            return cmd;
+        }
+
 
 
     }
