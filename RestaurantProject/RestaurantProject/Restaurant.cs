@@ -69,6 +69,24 @@ namespace RestaurantProject
             return cmd;
         }
 
+        //using a stored procedure this method is goint to update every row saved in the list to update
+        public void updateTable(DataGridView dataGridView,string procedureName , string[] parametersName, List <int> rowsList ) {
+            object[] parametersValues = new Object[parametersName.Length];
+
+            foreach (int row in rowsList)
+            {
+                for(int i = 0 ; i< parametersValues.Length ; i++ ){
+                    parametersValues[i] = dataGridView.Rows[row].Cells[i].Value;
+                }
+
+                MySqlCommand cmd = callProcedure(procedureName, parametersName, parametersValues);
+                cmd.ExecuteNonQuery();
+                
+
+            }
+
+        }
+
 
 
     }
