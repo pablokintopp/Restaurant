@@ -45,9 +45,15 @@ namespace RestaurantProject
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            Form formManagement = new Form3(this, restaurant);
-            formManagement.Show();
-            this.Hide();
+            if (restaurant.Employee.Type == 'A')
+            {
+                Form formManagement = new Form3(this, restaurant);
+                formManagement.Show();
+                this.Hide();
+            }
+            else {
+                MessageBox.Show("Acess Denied!");
+            }
         }
 
         private void buttonNewOrder_Click(object sender, EventArgs e)

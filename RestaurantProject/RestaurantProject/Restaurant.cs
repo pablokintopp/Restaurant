@@ -86,6 +86,16 @@ namespace RestaurantProject
             }
 
         }
+        // type == S , C , I , D, F ...
+        public Boolean validInput(TextBox textField) { 
+            Boolean ret = true;
+
+            if (textField.TextLength == 0)
+                ret = false;            
+
+
+            return ret;
+        }
 
 
 
