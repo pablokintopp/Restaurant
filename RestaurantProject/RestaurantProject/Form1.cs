@@ -67,13 +67,5 @@ namespace RestaurantProject
                 
             }
         }
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar = 13) {
-                 MessageBox.Show("It worked");
-            }
-
-        }
     }
 }
