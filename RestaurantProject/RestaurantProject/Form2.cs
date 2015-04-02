@@ -56,6 +56,13 @@ namespace RestaurantProject
             formNewOrder.Show();
             this.Hide();
         }
+
+        private void buttonNewPayment_Click(object sender, EventArgs e)
+        {
+            Form formNewOrder = new Form5(this, restaurant);
+            formNewOrder.Show();
+            this.Hide();
+        }
         
     }
 }

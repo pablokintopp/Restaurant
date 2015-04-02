@@ -40,3 +40,4 @@ C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\o
 C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form3.resources
 C:\Users\adjdantas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form5.resources
 C:\Users\adjdantas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form4.resources
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form4.resources

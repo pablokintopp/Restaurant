@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//STATUS 'P' = pendent , 'U' = Unpaid  and 'D' = Done/finished/paid
+
 namespace RestaurantProject
 {
     public partial class Form4 : Form
@@ -28,17 +30,24 @@ namespace RestaurantProject
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string[] parametersName = { "p_id", "p_status" };
+            object[] parametersValue = { dataGridView3.SelectedRows[0].Cells[0].Value, 'D' };
+            MySqlCommand cmd = restaurant.callProcedure("Rest_ChangeStatus", parametersName, parametersValue);
+            cmd.ExecuteNonQuery();
+            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowUnpaidOrders"), dataGridView3);
 
+            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowPaidOrders"), dataGridView2);
+            
         }
 
         private void ButtonCheckP_Click(object sender, EventArgs e)
         {
-            string[] parametersName = { "p_id" };
+            string[] parametersName = { "p_id","p_status" };
             DataGridViewSelectedRowCollection rows = dataGridView1.SelectedRows;
             foreach (DataGridViewRow row in rows)
             {
-                object[] parametersValue = { row.Cells[0].Value };
-                MySqlCommand cmd = restaurant.callProcedure("Rest_Check", parametersName, parametersValue);
+                object[] parametersValue = { row.Cells[0].Value , 'U' };
+                MySqlCommand cmd = restaurant.callProcedure("Rest_ChangeStatus", parametersName, parametersValue);
                 cmd.ExecuteNonQuery();
             }
 
@@ -81,7 +90,7 @@ namespace RestaurantProject
         private void buttonDltU_Click(object sender, EventArgs e)
         {
             string[] parametersName = { "p_id" };
-            DataGridViewSelectedRowCollection rows = dataGridView2.SelectedRows;
+            DataGridViewSelectedRowCollection rows = dataGridView3.SelectedRows;
             foreach (DataGridViewRow row in rows)
             {
                 object[] parametersValue = { row.Cells[0].Value };
@@ -91,7 +100,50 @@ namespace RestaurantProject
 
 
 
-            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowPendentOrders"), dataGridView2);
+            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowUnpaidOrders"), dataGridView3);
+
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            //PAYMENT FOR ALL ORDERS RELATED WITH THIS TABLE
+            double total = 0;
+            string[] parametersName = { "p_id","p_status" };
+            
+            DataGridViewSelectedRowCollection rows = dataGridView3.SelectedRows;
+
+            int tableNumber = (int)rows[0].Cells[2].Value;
+            DataGridViewRowCollection allRows = dataGridView3.Rows;
+
+            foreach (DataGridViewRow row in allRows)
+            {
+                if ((int)row.Cells[2].Value == tableNumber) {
+                    total += Convert.ToDouble(row.Cells[6].Value);
+
+                    object[] parametersValue = { row.Cells[0].Value , 'D' };
+                    MySqlCommand cmd = restaurant.callProcedure("Rest_ChangeStatus", parametersName, parametersValue);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Total is : $"+total.ToString());
+
+            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowUnpaidOrders"), dataGridView3);
+
+            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowPaidOrders"), dataGridView2);
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.RowIndex>=0) // To avoid error
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+        }
+
+        private void dataGridView3_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dataGridView3.Rows[e.RowIndex].Selected = true;
         }
     }
 }
