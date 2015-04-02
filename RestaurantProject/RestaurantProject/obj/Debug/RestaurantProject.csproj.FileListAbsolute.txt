@@ -36,8 +36,15 @@ C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\D
 C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form2.resources
 C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Properties.Resources.resources
 C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.csproj.GenerateResource.Cache
+<<<<<<< HEAD
+C:\Users\CICEROPC\Dropbox\Douglas College Graduation\CSIS 3540 001 - Client Server Systems\FinalProject\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form5.resources
+=======
 C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form5.resources
 C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form3.resources
 C:\Users\adjdantas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form5.resources
 C:\Users\adjdantas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form4.resources
+<<<<<<< HEAD
 C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form4.resources
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
