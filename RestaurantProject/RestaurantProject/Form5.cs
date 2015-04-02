@@ -55,6 +55,8 @@ namespace RestaurantProject
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Boolean validInput = false;
+            string msg = "Please at least select something ";
             object dishId = null;
             object bvgId = null;
             double total = 0;
@@ -62,15 +64,22 @@ namespace RestaurantProject
             if (dataGridView1.SelectedRows.Count > 0) {
                 dishId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
                 total += Convert.ToDouble(dataGridView1.SelectedRows[0].Cells[3].Value);
+                validInput = true;
             }
 
             if (dataGridView2.SelectedRows.Count > 0)
             {
                 bvgId = (int)dataGridView2.SelectedRows[0].Cells[0].Value;
                 total += Convert.ToDouble(dataGridView2.SelectedRows[0].Cells[3].Value);
+                validInput = true;
             }
-        
 
+            int tableNumber;
+
+            if (!(Int32.TryParse(textBox1.Text.Trim(), out tableNumber))&& validInput) {
+                validInput = false;
+                msg = "Table must be a number";
+            }
             
 
             string[] parametersName = { "p_emp", "p_tb", "p_dish", "p_bevg", "p_total" };
