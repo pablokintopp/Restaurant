@@ -67,8 +67,7 @@ namespace RestaurantProject
                     restaurant.Clear(textD3);
                 }
                 else
-                    MessageBox.Show(msg);
-            
+                    MessageBox.Show(msg);            
         }
 
         private void Form3_Load(object sender, EventArgs e)
