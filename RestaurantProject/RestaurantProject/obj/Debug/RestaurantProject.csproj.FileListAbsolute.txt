@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\RestaurantProject.exe.config
 C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\RestaurantProject.exe
 C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\RestaurantProject.pdb
@@ -12,3 +13,19 @@ C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\D
 C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.csproj.GenerateResource.Cache
 C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.exe
 C:\Users\lucas\Source\Repos\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.pdb
+=======
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\RestaurantProject.exe.config
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\RestaurantProject.exe
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\RestaurantProject.pdb
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\bin\Debug\MySql.Data.dll
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.csprojResolveAssemblyReference.cache
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form1.resources
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form2.resources
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form3.resources
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form4.resources
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Form5.resources
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.Properties.Resources.resources
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.csproj.GenerateResource.Cache
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.exe
+C:\Users\Pablo\Documents\GitHub\Restaurant\RestaurantProject\RestaurantProject\obj\Debug\RestaurantProject.pdb
+>>>>>>> origin/master
