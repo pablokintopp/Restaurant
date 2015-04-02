@@ -30,25 +30,28 @@ namespace RestaurantProject
         private void button1_Click(object sender, EventArgs e)
         {
             //GETTING INFORMATION FROM THE DISH/BEVEREAGE AND CREATING THE ARRAYS TO USE A STORED PROCEDURE
-            char type = comboBoxNewDish.Text.ToString().Equals("Dish") ? 'D' : 'B';
-            string[] parametersNames = { "p_name", "p_descr", "p_price"};
-            object[] parametersValues = { textD1.Text.ToString(), textD2.Text.ToString(), Convert.ToDouble(textD3.Text.ToString()) };
+            Boolean val = true;
+            if(validInput(textD1)){
+                char type = comboBoxNewDish.Text.ToString().Equals("Dish") ? 'D' : 'B';
+                string[] parametersNames = { "p_name", "p_descr", "p_price"};
+                object[] parametersValues = { textD1.Text.ToString(), textD2.Text.ToString(), Convert.ToDouble(textD3.Text.ToString()) };
 
-            MySqlCommand cmd = restaurant.callProcedure( (type == 'D') ? ("Rest_NewDish") : ("Rest_NewBeverage"), parametersNames, parametersValues);
-            //NONQUERY BECAUSE THERE'S NO TABLE RETURNING FROM DATABASE IT'S JUST A INSERT
-            cmd.ExecuteNonQuery();
+                MySqlCommand cmd = restaurant.callProcedure( (type == 'D') ? ("Rest_NewDish") : ("Rest_NewBeverage"), parametersNames, parametersValues);
+                //NONQUERY BECAUSE THERE'S NO TABLE RETURNING FROM DATABASE IT'S JUST A INSERT
+                cmd.ExecuteNonQuery();
 
-            //SHOWING THE  DATAGRID OF Dishes WITH THE NEW dish JUST ADDED AS WELL
-            if(type == 'D')            
-                 restaurant.displayGridView(restaurant.callProcedure("Rest_ShowDishes"), dataGridView2);
-            //SHOWING THE  DATAGRID OF beverages WITH THE NEW beverage JUST ADDED AS WELL
-            else           
-            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowBeverages"), dataGridView3);
+                //SHOWING THE  DATAGRID OF Dishes WITH THE NEW dish JUST ADDED AS WELL
+                if(type == 'D')            
+                     restaurant.displayGridView(restaurant.callProcedure("Rest_ShowDishes"), dataGridView2);
+                //SHOWING THE  DATAGRID OF beverages WITH THE NEW beverage JUST ADDED AS WELL
+                else           
+                restaurant.displayGridView(restaurant.callProcedure("Rest_ShowBeverages"), dataGridView3);
 
-            //clear textFields
-            restaurant.Clear(textD1);
-            restaurant.Clear(textD2);
-            restaurant.Clear(textD3);
+                //clear textFields
+                restaurant.Clear(textD1);
+                restaurant.Clear(textD2);
+                restaurant.Clear(textD3);
+            }
             
         }
 
