@@ -67,5 +67,15 @@ namespace RestaurantProject
                 
             }
         }
+
+        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                //MessageBox.Show("test");
+                button1_Click(null, null);
+            }
+        
+        }
     }
 }
