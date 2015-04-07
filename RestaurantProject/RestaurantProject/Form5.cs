@@ -37,19 +37,22 @@ namespace RestaurantProject
             //Loading beverages from the database
             cmd = restaurant.callProcedure("Rest_showBeverages");
             restaurant.displayGridView(cmd, dataGridView2);
+            textBox1.Text = "0";
         }
 
       
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            dataGridView1.Rows[e.RowIndex].Selected = true;
+            if(e.RowIndex >= 0)
+                dataGridView1.Rows[e.RowIndex].Selected = true;
            
         }
 
         private void dataGridView2_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
-            dataGridView2.Rows[e.RowIndex].Selected = true;
+            if (e.RowIndex >= 0)
+                dataGridView2.Rows[e.RowIndex].Selected = true;
             
         }
 
@@ -100,6 +103,18 @@ namespace RestaurantProject
         private void Form5_FormClosed(object sender, FormClosedEventArgs e)
         {
             parent.Show();
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            parent.Show();
+            this.Close();
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parent.Close();
         }
 
      

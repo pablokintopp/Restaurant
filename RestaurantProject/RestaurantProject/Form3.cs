@@ -87,13 +87,18 @@ namespace RestaurantProject
             if ((restaurant.validInput(textU1) && restaurant.validInput(textU2) && restaurant.validInput(textU3) && restaurant.validInput(textU4)) == false)
                 val = false;
             if (val)
-            {
+            {   
+
+                //checking if the user is Admin or Employee
                 char type = comboBoxNewUser.Text.ToString().Equals("Admin") ? 'A' : 'E';
+
+                //the parameters name to call the stored procedure
                 string[] parametersNames = { "p_username", "p_firstname", "p_lastname", "p_password", "p_type" };
+                //the respective values for those parameters
                 object[] parametersValues = { textU1.Text.ToString(), textU2.Text.ToString(), textU3.Text.ToString(), textU4.Text.ToString(), type };
 
                 MySqlCommand cmd = restaurant.callProcedure("Rest_NewUser", parametersNames, parametersValues);
-                //NONQUERY BECAUSE THERE'S NO TABLE RETURNING FROM DATABASE IT'S JUST A INSERT
+                //NONQUERY BECAUSE THERE'S NO TABLE RETURNING FROM DATABASE IT'S JUST An INSERT Command
                 cmd.ExecuteNonQuery();
 
 
@@ -130,13 +135,16 @@ namespace RestaurantProject
 
         private void buttonUpdateU_Click(object sender, EventArgs e)
         {
-           
-            string[] parametersNames = { "p_id","p_username", "p_firstname", "p_lastname", "p_password", "p_type" };
-            restaurant.updateTable(dataGridView1,"Rest_UpdateUser",parametersNames,userRowsChanged);
 
-            buttonUpdateU.Visible = false;
-            userRowsChanged.Clear();
-
+            if (userRowsChanged.Count() > 0)
+            {
+                string[] parametersNames = { "p_id", "p_username", "p_firstname", "p_lastname", "p_password", "p_type" };
+                restaurant.updateTable(dataGridView1, "Rest_UpdateUser", parametersNames, userRowsChanged);
+                userRowsChanged.Clear();
+            }
+            else {
+                MessageBox.Show("No changes to update.");
+            }
         }
 
         private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -144,7 +152,6 @@ namespace RestaurantProject
             //check and add to the list to make updates if it doesn't exist in the list already
             if (!dishRowsChanged.Contains(e.RowIndex))
                 dishRowsChanged.Add(e.RowIndex);
-            buttonUpdateDish.Visible = true;
         }
 
         private void dataGridView3_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -152,41 +159,61 @@ namespace RestaurantProject
             //check and add to the list to make updates if it doesn't exist in the list already
             if (!beverageRowsChanged.Contains(e.RowIndex))
                 beverageRowsChanged.Add(e.RowIndex);
-            buttonUpdateBeverage.Visible = true;
+            
         }
 
         private void buttonUpdateDish_Click(object sender, EventArgs e)
         {
-            string[] parametersNames = { "p_id", "p_name", "p_descr", "p_price" };
-            restaurant.updateTable(dataGridView2, "Rest_UpdateDish", parametersNames, dishRowsChanged);
+            if (dishRowsChanged.Count() > 0)
+            {
+                string[] parametersNames = { "p_id", "p_name", "p_descr", "p_price" };
+                restaurant.updateTable(dataGridView2, "Rest_UpdateDish", parametersNames, dishRowsChanged);
 
-            buttonUpdateDish.Visible = false;
-            dishRowsChanged.Clear();
+
+                dishRowsChanged.Clear();
+            }
+            else {
+                MessageBox.Show("No changes to update.");
+            }
         }
 
         private void buttonUpdateBeverage_Click(object sender, EventArgs e)
         {
-            string[] parametersNames = { "p_id", "p_name", "p_descr", "p_price" };
-            restaurant.updateTable(dataGridView3, "Rest_UpdateBeverage", parametersNames, beverageRowsChanged);
+            if (dishRowsChanged.Count() > 0)
+            {
+                string[] parametersNames = { "p_id", "p_name", "p_descr", "p_price" };
+                restaurant.updateTable(dataGridView3, "Rest_UpdateBeverage", parametersNames, beverageRowsChanged);
 
-            buttonUpdateBeverage.Visible = false;
-            beverageRowsChanged.Clear();
+
+                beverageRowsChanged.Clear();
+            }
+            else {
+                MessageBox.Show("No changes to update.");
+            }  
+
         }
 
         private void buttonDelU_Click(object sender, EventArgs e)
         {
             string [] parametersName = {"p_id"};
             DataGridViewSelectedRowCollection rows = dataGridView1.SelectedRows;
-            foreach(DataGridViewRow row in rows){
-                object[] parametersValue = {row.Cells[0].Value };
-               MySqlCommand cmd= restaurant.callProcedure("Rest_DeleteUser", parametersName, parametersValue);
-               cmd.ExecuteNonQuery();
+            //checking if there are rows selected to delete
+            if (rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in rows)
+                {
+                    object[] parametersValue = { row.Cells[0].Value };
+                    MySqlCommand cmd = restaurant.callProcedure("Rest_DeleteUser", parametersName, parametersValue);
+                    cmd.ExecuteNonQuery();
+                }
+
+
+
+                restaurant.displayGridView(restaurant.callProcedure("Rest_ShowUsers"), dataGridView1);
             }
-
-            buttonDelU.Visible = false;
-
-            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowUsers"), dataGridView1);
-
+            else {
+                MessageBox.Show("No rows selected to delete!");
+            }
 
             
         }
@@ -198,50 +225,62 @@ namespace RestaurantProject
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            buttonDelU.Visible = true;
+          
         }
 
         private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            buttonDelDish.Visible = true;
+           
         }
 
         private void dataGridView3_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            buttonDelBeverage.Visible = true;
+          
         }
 
         private void buttonDelDish_Click(object sender, EventArgs e)
         {
             string[] parametersName = { "p_id" };
             DataGridViewSelectedRowCollection rows = dataGridView2.SelectedRows;
-            foreach (DataGridViewRow row in rows)
-            {
-                object[] parametersValue = { row.Cells[0].Value };
-                MySqlCommand cmd = restaurant.callProcedure("Rest_DeleteDish", parametersName, parametersValue);
-                cmd.ExecuteNonQuery();
+
+            if(rows.Count > 0){
+                foreach (DataGridViewRow row in rows)
+                {
+                    object[] parametersValue = { row.Cells[0].Value };
+                    MySqlCommand cmd = restaurant.callProcedure("Rest_DeleteDish", parametersName, parametersValue);
+                    cmd.ExecuteNonQuery();
+                }
+
+            
+
+                restaurant.displayGridView(restaurant.callProcedure("Rest_ShowDishes"), dataGridView2);
+
+                }else{
+
+                    MessageBox.Show("No rows selected to delete!");
             }
-
-            buttonDelDish.Visible = false;
-
-            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowDishes"), dataGridView2);
         }
 
         private void buttonDelBeverage_Click(object sender, EventArgs e)
         {
             string[] parametersName = { "p_id" };
             DataGridViewSelectedRowCollection rows = dataGridView3.SelectedRows;
-            foreach (DataGridViewRow row in rows)
+            if (rows.Count > 0)
             {
-                object[] parametersValue = { row.Cells[0].Value };
-                MySqlCommand cmd = restaurant.callProcedure("Rest_DeleteBeverage", parametersName, parametersValue);
-                cmd.ExecuteNonQuery();
+                foreach (DataGridViewRow row in rows)
+                {
+                    object[] parametersValue = { row.Cells[0].Value };
+                    MySqlCommand cmd = restaurant.callProcedure("Rest_DeleteBeverage", parametersName, parametersValue);
+                    cmd.ExecuteNonQuery();
+                }
+
+
+                restaurant.displayGridView(restaurant.callProcedure("Rest_ShowBeverages"), dataGridView3);
             }
-
-            buttonDelBeverage.Visible = false;
-
-            restaurant.displayGridView(restaurant.callProcedure("Rest_ShowBeverages"), dataGridView3);
-        }
+            else {
+                MessageBox.Show("No rows selected to delete!");
+            }
+                }
 
         private void comboBoxNewUser_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -256,6 +295,19 @@ namespace RestaurantProject
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            parent.Show();
+            this.Close();
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
+            parent.Close();
         }
     }
 }

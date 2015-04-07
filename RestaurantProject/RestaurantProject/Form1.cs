@@ -37,6 +37,8 @@ namespace RestaurantProject
             status = server.connectToDatabase();
             labelStatus.Text = "Server Status : " + status;
             restaurant = new Restaurant(server.Connection);
+            textBoxUser.Text = "admin";
+            textBoxPassword.Text = "admin";
         }
 
         private void button1_Click(object sender, EventArgs e)

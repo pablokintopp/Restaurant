@@ -39,6 +39,8 @@
             this.ButtonDltP = new System.Windows.Forms.Button();
             this.buttonDltU = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.buttonMenu = new System.Windows.Forms.Button();
+            this.buttonLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -93,7 +95,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(798, 242);
+            this.button1.Location = new System.Drawing.Point(750, 242);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -151,7 +153,7 @@
             // buttonDltU
             // 
             this.buttonDltU.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDltU.Location = new System.Drawing.Point(717, 242);
+            this.buttonDltU.Location = new System.Drawing.Point(669, 242);
             this.buttonDltU.Name = "buttonDltU";
             this.buttonDltU.Size = new System.Drawing.Size(75, 23);
             this.buttonDltU.TabIndex = 9;
@@ -162,19 +164,43 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(879, 242);
+            this.button5.Location = new System.Drawing.Point(834, 242);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(119, 23);
             this.button5.TabIndex = 10;
-            this.button5.Text = "Pay All";
+            this.button5.Text = "Pay All By table ID ";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // buttonMenu
+            // 
+            this.buttonMenu.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMenu.Location = new System.Drawing.Point(822, 4);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(79, 26);
+            this.buttonMenu.TabIndex = 44;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogout.Location = new System.Drawing.Point(907, 4);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(79, 26);
+            this.buttonLogout.TabIndex = 43;
+            this.buttonLogout.Text = "Logout";
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 511);
+            this.Controls.Add(this.buttonMenu);
+            this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.buttonDltU);
             this.Controls.Add(this.ButtonDltP);
@@ -211,5 +237,7 @@
         private System.Windows.Forms.Button ButtonDltP;
         private System.Windows.Forms.Button buttonDltU;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonMenu;
+        private System.Windows.Forms.Button buttonLogout;
     }
 }

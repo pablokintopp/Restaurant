@@ -62,6 +62,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.buttonLogout = new System.Windows.Forms.Button();
+            this.buttonMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -373,7 +375,6 @@
             this.buttonUpdateU.TabIndex = 31;
             this.buttonUpdateU.Text = "Update";
             this.buttonUpdateU.UseVisualStyleBackColor = true;
-            this.buttonUpdateU.Visible = false;
             this.buttonUpdateU.Click += new System.EventHandler(this.buttonUpdateU_Click);
             // 
             // buttonDelU
@@ -385,7 +386,6 @@
             this.buttonDelU.TabIndex = 32;
             this.buttonDelU.Text = "Delete";
             this.buttonDelU.UseVisualStyleBackColor = true;
-            this.buttonDelU.Visible = false;
             this.buttonDelU.Click += new System.EventHandler(this.buttonDelU_Click);
             // 
             // buttonDelDish
@@ -397,7 +397,6 @@
             this.buttonDelDish.TabIndex = 34;
             this.buttonDelDish.Text = "Delete";
             this.buttonDelDish.UseVisualStyleBackColor = true;
-            this.buttonDelDish.Visible = false;
             this.buttonDelDish.Click += new System.EventHandler(this.buttonDelDish_Click);
             // 
             // buttonUpdateDish
@@ -409,7 +408,6 @@
             this.buttonUpdateDish.TabIndex = 33;
             this.buttonUpdateDish.Text = "Update";
             this.buttonUpdateDish.UseVisualStyleBackColor = true;
-            this.buttonUpdateDish.Visible = false;
             this.buttonUpdateDish.Click += new System.EventHandler(this.buttonUpdateDish_Click);
             // 
             // buttonDelBeverage
@@ -421,7 +419,6 @@
             this.buttonDelBeverage.TabIndex = 36;
             this.buttonDelBeverage.Text = "Delete";
             this.buttonDelBeverage.UseVisualStyleBackColor = true;
-            this.buttonDelBeverage.Visible = false;
             this.buttonDelBeverage.Click += new System.EventHandler(this.buttonDelBeverage_Click);
             // 
             // buttonUpdateBeverage
@@ -433,7 +430,6 @@
             this.buttonUpdateBeverage.TabIndex = 35;
             this.buttonUpdateBeverage.Text = "Update";
             this.buttonUpdateBeverage.UseVisualStyleBackColor = true;
-            this.buttonUpdateBeverage.Visible = false;
             this.buttonUpdateBeverage.Click += new System.EventHandler(this.buttonUpdateBeverage_Click);
             // 
             // label5
@@ -469,11 +465,35 @@
             this.label14.TabIndex = 40;
             this.label14.Text = "Beverage Update/Delete";
             // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogout.Location = new System.Drawing.Point(892, 12);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(79, 26);
+            this.buttonLogout.TabIndex = 41;
+            this.buttonLogout.Text = "Logout";
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            // 
+            // buttonMenu
+            // 
+            this.buttonMenu.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMenu.Location = new System.Drawing.Point(807, 12);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(79, 26);
+            this.buttonMenu.TabIndex = 42;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 511);
+            this.Controls.Add(this.buttonMenu);
+            this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label5);
@@ -559,5 +579,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBoxNewUser;
+        private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Button buttonMenu;
     }
 }
