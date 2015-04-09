@@ -36,7 +36,7 @@ namespace RestaurantProject
             textBox.Clear();
         }
 
-        //DISPLAY THE COMMAND RESULT (cmd) IN ANY DATAGRIDVIEW  BY PARAMETER 
+        //DISPLAY THE COMMAND RESULT (cmd) IN the  DATAGRIDVIEW  which come by PARAMETER 
         public void displayGridView(MySqlCommand cmd, DataGridView dataGridView)
         {
             MySqlDataAdapter mcd = new MySqlDataAdapter(cmd);
@@ -54,7 +54,7 @@ namespace RestaurantProject
             return cmd;
         }
 
-        //CALLING PROCEDURE WITH  PARAMETERS
+        //CALLING PROCEDURE WITH  PARAMETERS(parameters name and parameters value)
         public MySqlCommand callProcedure(string procedureName, string[] parameterName, object[] parameterValue)
         {
             MySqlCommand cmd = new MySqlCommand(procedureName, connection);
@@ -69,7 +69,7 @@ namespace RestaurantProject
             return cmd;
         }
 
-        //using a stored procedure this method is goint to update every row saved in the list to update
+        //using a stored procedure this method is goint to update every row saved in the list to update using the datagridview data as values
         public void updateTable(DataGridView dataGridView,string procedureName , string[] parametersName, List <int> rowsList ) {
             object[] parametersValues = new Object[parametersName.Length];
 
@@ -86,7 +86,7 @@ namespace RestaurantProject
             }
 
         }
-        // type == S , C , I , D, F ...
+        // just check if a textfield is empty or not
         public Boolean validInput(TextBox textField) { 
             Boolean ret = true;
 

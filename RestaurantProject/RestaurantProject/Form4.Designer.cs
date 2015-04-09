@@ -41,6 +41,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
+            this.textBoxTax = new System.Windows.Forms.TextBox();
+            this.labelTax = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -95,7 +98,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(750, 242);
+            this.button1.Location = new System.Drawing.Point(584, 242);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -106,7 +109,7 @@
             // buttonCheckP
             // 
             this.buttonCheckP.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheckP.Location = new System.Drawing.Point(399, 242);
+            this.buttonCheckP.Location = new System.Drawing.Point(351, 242);
             this.buttonCheckP.Name = "buttonCheckP";
             this.buttonCheckP.Size = new System.Drawing.Size(75, 23);
             this.buttonCheckP.TabIndex = 5;
@@ -142,7 +145,7 @@
             // ButtonDltP
             // 
             this.ButtonDltP.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDltP.Location = new System.Drawing.Point(318, 242);
+            this.ButtonDltP.Location = new System.Drawing.Point(270, 242);
             this.ButtonDltP.Name = "ButtonDltP";
             this.ButtonDltP.Size = new System.Drawing.Size(75, 23);
             this.ButtonDltP.TabIndex = 8;
@@ -153,7 +156,7 @@
             // buttonDltU
             // 
             this.buttonDltU.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDltU.Location = new System.Drawing.Point(669, 242);
+            this.buttonDltU.Location = new System.Drawing.Point(503, 242);
             this.buttonDltU.Name = "buttonDltU";
             this.buttonDltU.Size = new System.Drawing.Size(75, 23);
             this.buttonDltU.TabIndex = 9;
@@ -164,7 +167,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(834, 242);
+            this.button5.Location = new System.Drawing.Point(668, 242);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(119, 23);
             this.button5.TabIndex = 10;
@@ -194,11 +197,42 @@
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
+            // textBoxTax
+            // 
+            this.textBoxTax.Location = new System.Drawing.Point(860, 244);
+            this.textBoxTax.Name = "textBoxTax";
+            this.textBoxTax.Size = new System.Drawing.Size(41, 20);
+            this.textBoxTax.TabIndex = 45;
+            // 
+            // labelTax
+            // 
+            this.labelTax.AutoSize = true;
+            this.labelTax.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelTax.Location = new System.Drawing.Point(826, 246);
+            this.labelTax.Name = "labelTax";
+            this.labelTax.Size = new System.Drawing.Size(35, 16);
+            this.labelTax.TabIndex = 46;
+            this.labelTax.Text = "Tax:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(904, 246);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(18, 16);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "%";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 511);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelTax);
+            this.Controls.Add(this.textBoxTax);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.button5);
@@ -213,7 +247,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form4";
-            this.Text = "Form4 - Order Management";
+            this.Text = "Order Management";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form4_FormClosed);
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -239,5 +273,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button buttonMenu;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.TextBox textBoxTax;
+        private System.Windows.Forms.Label labelTax;
+        private System.Windows.Forms.Label label4;
     }
 }

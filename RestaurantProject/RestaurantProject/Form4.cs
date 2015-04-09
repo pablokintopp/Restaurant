@@ -78,6 +78,7 @@ namespace RestaurantProject
             restaurant.displayGridView(restaurant.callProcedure("Rest_ShowFinishedOrders"), dataGridView2);
 
             restaurant.displayGridView(restaurant.callProcedure("Rest_ShowUnpaidOrders"), dataGridView3);
+            textBoxTax.Text = "10";
         }
 
         private void ButtonDltP_Click(object sender, EventArgs e)
@@ -157,8 +158,9 @@ namespace RestaurantProject
                         cmd.ExecuteNonQuery();
                     }
                 }
-
-                MessageBox.Show("Total is : $"+total.ToString());
+                double tax = Convert.ToDouble(textBoxTax.Text);
+                tax = total * tax * 0.01;
+                MessageBox.Show("Total for this table is : $"+total.ToString()+" +  Tax: $"+tax);
 
                 restaurant.displayGridView(restaurant.callProcedure("Rest_ShowUnpaidOrders"), dataGridView3);
 
@@ -193,6 +195,11 @@ namespace RestaurantProject
         {
             this.Close();
             parent.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
